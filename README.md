@@ -1,5 +1,5 @@
 # Upper-Air-Maps
-Script for download upper air data and plotting upper air maps.
+Script for download upper air data and plotting upper air maps. Currently a work in progress, but it is funtional! 
 
 Requirements:
 
