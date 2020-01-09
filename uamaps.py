@@ -53,7 +53,7 @@ def main():
         td_option = True #change default to dewpoint
 
     levels = [250, 300, 500, 700, 850, 925]
-    uadata, stations = getData(station_file)
+    uadata, stations = getData(station_file, hh)
     today = datetime.utcnow()
     date = datetime(today.year, today.month, today.day, hh) - timedelta(hours=6)
         #Get GFS data
@@ -70,7 +70,7 @@ def main():
     
 
 
-def getData(station_file):
+def getData(station_file, hh):
     """
     This function will make use of Siphons Wyoming Upperair utility. Will pass
     the function a list of stations and data will be downloaded as pandas a 
@@ -83,7 +83,7 @@ def getData(station_file):
     stations, lats, lons = station_data['station_id'].values, station_data['lat'].values, station_data['lon'].values
     stations = list(stations)    
     date = datetime.utcnow()
-    date = datetime(date.year, date.month, date.day, 00)
+    date = datetime(date.year, date.month, date.day, hh)
     data = {} #a dictionary for our data
     station_list = []
     
